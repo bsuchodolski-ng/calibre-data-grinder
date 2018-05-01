@@ -1,4 +1,11 @@
-# README
+# Calibre Data Grinder - WIP
+
+## Dependencies
+
+* ruby 2.5.1
+* postgres
+* npm install calibre -g and set it up
+
 
 This README would normally document whatever steps are necessary to get the
 application up and running.
