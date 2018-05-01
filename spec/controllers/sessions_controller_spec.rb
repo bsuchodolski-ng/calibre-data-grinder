@@ -10,10 +10,10 @@ RSpec.describe SessionsController, type: :controller do
     allow(User).to receive(:from_omniauth).and_return(user)
   end
 
-  describe "GET #create" do
+  describe 'GET #create' do
     subject { get :create }
 
-    it "calls User.from_omniauth" do
+    it 'calls User.from_omniauth' do
       expect(User).to receive(:from_omniauth).with(auth_hash).and_call_original
       subject
     end
@@ -29,11 +29,30 @@ RSpec.describe SessionsController, type: :controller do
     end
   end
 
-  # describe "GET #destroy" do
-  #   it "returns http success" do
-  #     get :destroy
-  #     expect(response).to have_http_status(:success)
-  #   end
-  # end
+  describe 'DELETE #destroy' do
+    subject { delete :destroy }
 
+    context 'when user is logged in' do
+      before do
+        log_in(user)
+      end
+
+      it 'deletes user id from session' do
+        subject
+        expect(session[:user_id]).to be_nil
+      end
+
+      it 'redirects to root path' do
+        subject
+        expect(response).to redirect_to(root_path)
+      end
+    end
+
+    context 'when user is not logged in' do
+      it 'redirects to root path' do
+        subject
+        expect(response).to redirect_to(root_path)
+      end
+    end
+  end
 end
