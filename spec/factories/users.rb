@@ -1,9 +1,9 @@
 FactoryBot.define do
   factory :user do
-    provider "MyString"
-    uid "MyString"
-    name "MyString"
-    oauth_token "MyString"
-    oauth_expires_at "2018-05-01 09:33:22"
+    provider 'google_oauth2'
+    uid '100000000000000000000'
+    name 'user'
+    oauth_token 'hghjk6743'
+    oauth_expires_at Time.now
   end
 end
