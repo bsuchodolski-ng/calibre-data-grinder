@@ -6,7 +6,6 @@ RSpec.describe User, type: :model do
 
   describe '.from_omniauth' do
     context 'when user is not yet created' do
-
       it 'creates new user based on auth data' do
         expect { User.from_omniauth(auth_hash) }.to change { User.count }
         new_user = User.last
