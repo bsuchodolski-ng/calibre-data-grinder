@@ -1,1 +1,22 @@
-<%= link_to "Sign in with Google", "/auth/google_oauth2", id: "sign_in" %>
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Google Auth Example App</title>
+    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
+    <%= stylesheet_link_tag 'https://use.fontawesome.com/releases/v5.0.12/css/all.css', integrity: 'sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9', crossorigin: 'anonymous' %>
+    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+    <%= csrf_meta_tags %>
+  </head>
+  <body>
+    <div class="container">
+      <div class="title">
+        <h1>Calibre Data Grinder</h1>
+        <%= image_tag('logo.png', alt: 'Calibre Data Grinder Logo') %>
+      </div>
+      <%= link_to "/auth/google_oauth2", id: "sign_in", class: "button--big" do %>
+        <i class="fab fa-google-plus-g"></i>
+        Sign in with Google
+      <% end %>
+    </div>
+  </body>
+</html>
