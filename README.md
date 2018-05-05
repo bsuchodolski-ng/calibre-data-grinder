@@ -1,31 +1,26 @@
 # Calibre Data Grinder - WIP
 
+## About
+
+Calibre Data Grinder
+
+
 ## Dependencies
 
 * ruby 2.5.1
 * postgres
 * npm install calibre -g and set it up
 
+## What have I learned with this project
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Integrating Google API for signing up;
+* Writing tests with RSpec;
+* Using CSS Grid for page layout;
+* Configuring and using Redis as Rails cache;
+* Using services to extract complex logic from controllers;
+* How to change default SQLite db to something else (PostgreSQL in this case);
 
-Things you may want to cover:
+## What have I practiced with this project
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+* Rails usage - routes and controllers, tweaking views with different layouts;
+* Further knowledge of what assets pipeline actually is and how it works;
