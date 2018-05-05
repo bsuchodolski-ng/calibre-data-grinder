@@ -10,6 +10,29 @@ RSpec.describe SessionsController, type: :controller do
     allow(User).to receive(:from_omniauth).and_return(user)
   end
 
+  describe 'GET #new' do
+    context 'when user is logged in' do
+      before do
+        log_in(user)
+        get :new
+      end
+
+      it 'redirects to dashboard' do
+        expect(response).to redirect_to(root_path)
+      end
+    end
+
+    context 'when user is not logged in' do
+      before do
+        get :new
+      end
+
+      it 'renders the new template' do
+        expect(response).to render_template('new')
+      end
+    end
+  end
+
   describe 'GET #create' do
     subject { get :create }
 
@@ -42,16 +65,16 @@ RSpec.describe SessionsController, type: :controller do
         expect(session[:user_id]).to be_nil
       end
 
-      it 'redirects to root path' do
+      it 'redirects to login path' do
         subject
-        expect(response).to redirect_to(root_path)
+        expect(response).to redirect_to(login_path)
       end
     end
 
     context 'when user is not logged in' do
-      it 'redirects to root path' do
+      it 'redirects to login path' do
         subject
-        expect(response).to redirect_to(root_path)
+        expect(response).to redirect_to(login_path)
       end
     end
   end
