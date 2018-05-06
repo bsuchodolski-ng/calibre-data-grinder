@@ -1,4 +1,9 @@
 <div>
   Signed in as <strong><%= current_user.name %></strong>!
   <%= link_to "Sign out", signout_path, id: "sign_out" %>
+
+  <select class="select2" name="state">
+    <option value="AL">Alabama</option>
+    <option value="WY">Wyoming</option>
+  </select>
 </div>
