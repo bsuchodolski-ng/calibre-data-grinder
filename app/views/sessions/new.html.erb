@@ -4,12 +4,12 @@
                           crossorigin: 'anonymous' %>
 <% end %>
 
-    <div class="container">
+    <div class="container login">
       <div class="title">
         <h1>Calibre Data Grinder</h1>
         <%= image_tag('logo.png', alt: 'Calibre Data Grinder Logo') %>
       </div>
-      <%= link_to "/auth/google_oauth2", id: "sign_in", class: "button--big" do %>
+      <%= link_to "/auth/google_oauth2", id: "sign_in", class: "button" do %>
         <i class="fab fa-google-plus-g"></i>
         Sign in with Google
       <% end %>

@@ -20,7 +20,32 @@ html, body {
   height: 100%;
 }
 
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
 body {
    background-color: #dbd223;
    font-family: 'Helvetica';
+}
+
+/* Buttons */
+
+.button {
+  display: inline-block;
+  background: black;
+  border: 1px solid black;
+  padding: 10px;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+  font-size: 1em;
+}
+
+.title img {
+  max-height: 75px;
 }

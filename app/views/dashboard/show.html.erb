@@ -1,9 +1,70 @@
-<div>
-  Signed in as <strong><%= current_user.name %></strong>!
-  <%= link_to "Sign out", signout_path, id: "sign_out" %>
+<% content_for :additional_stylesheets do %>
+  <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.css' %>
+<% end %>
 
-  <select class="select2" name="state">
-    <option value="AL">Alabama</option>
-    <option value="WY">Wyoming</option>
-  </select>
+<div class="container dashboard">
+
+  <div class="header">
+    <div class="title">
+      <h1>Calibre Data Grinder</h1>
+      <%= image_tag('logo.png', alt: 'Calibre Data Grinder Logo') %>
+    </div>
+
+    <div class="settings">
+      <strong><%= current_user.name %></strong>
+      <%= link_to "Sign out", signout_path, id: "sign_out", class: "button" %>
+    </div>
+  </div>
+
+  <div class="content">
+    <div class="controls">
+      <div class="metric">
+        <label for="metric_select">
+          Metric:
+        </label>
+        <select class="select2" id="metric_select"></select>
+      </div>
+
+      <div class="filters">
+        <span>Filters:</span>
+        <div class="filter">
+          <label for="metric_select">
+            Page:
+          </label>
+          <select class="select2" id="metric_select"></select>
+        </div>
+        <div class="filter">
+          <label for="metric_select">
+            Site:
+          </label>
+          <select class="select2" id="metric_select"></select>
+        </div>
+        <div class="filter">
+          <label for="metric_select">
+            Metric:
+          </label>
+          <select class="select2" id="metric_select"></select>
+        </div>
+      </div>
+
+      <button class="button">Generate</button>
+    </div>
+
+    <div id="data-table">
+      <div class="no_data">
+        <p>There is no data loaded yet.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="button_div">
+    <%= link_to 'https://calibreapp.com/', class: "button" do %>
+    See more information on <%= image_tag('calibre_logo.svg', alt: 'CalibreApp Logo') %>CalibreApp
+    <% end %>
+  </div>
+
+  <div class="footer">
+    <hr>
+    Source code: <%= link_to "Github", 'https://github.com/bsuchodolski-ng/calibre-data-grinder' %>
+  </div>
 </div>

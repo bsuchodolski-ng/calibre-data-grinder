@@ -2,7 +2,7 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.container {
+.container.login {
   display: grid;
   justify-items: center;
   align-content: center;
@@ -18,14 +18,9 @@
   align-items: center;
   text-transform: uppercase;
   font-size: 25px;
-
 }
 
-img {
-  max-height: 75px;
-}
-
-.button--big {
+.button {
   display: inline-block;
   background: black;
   border: 1px solid black;

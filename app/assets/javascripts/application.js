@@ -16,8 +16,16 @@
 //= require activestorage
 //= require turbolinks
 //= require select2
+//= require jquery-tablesorter
 //= require_tree .
 
 $(document).ready(function() {
-    $('.select2').select2();
+    $('.select2').select2({
+      theme: "bootstrap"
+    });
+    $(".tablesorter").tablesorter({
+      cssAsc: 'up',
+      cssDesc: 'down',
+      cssNone: 'none'
+    });
 });

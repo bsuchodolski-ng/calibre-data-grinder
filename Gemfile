@@ -15,6 +15,7 @@ gem 'omniauth-google-oauth2'
 gem 'redis-rails'
 gem 'jquery-rails'
 gem 'select2-rails'
+gem 'jquery-tablesorter'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
