@@ -1,5 +1,4 @@
 class SessionsController < ApplicationController
-  layout false
   before_action :logged_in, only: [:new]
 
   def new; end

@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Google Auth Example App</title>
-    <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-    <%= stylesheet_link_tag 'https://use.fontawesome.com/releases/v5.0.12/css/all.css', integrity: 'sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9', crossorigin: 'anonymous' %>
-    <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
-    <%= csrf_meta_tags %>
-  </head>
-  <body>
+<% content_for :additional_stylesheets do %>
+  <%= stylesheet_link_tag 'https://use.fontawesome.com/releases/v5.0.12/css/all.css',
+                          integrity: 'sha384-G0fIWCsCzJIMAVNQPfjH08cyYaUtMwjJwqiRKxxE/rx96Uroj1BtIQ6MLJuheaO9',
+                          crossorigin: 'anonymous' %>
+<% end %>
+
     <div class="container">
       <div class="title">
         <h1>Calibre Data Grinder</h1>
@@ -18,5 +14,3 @@
         Sign in with Google
       <% end %>
     </div>
-  </body>
-</html>
