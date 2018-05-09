@@ -2124,25 +2124,27 @@ module Calibre
     }
   HEREDOC
 
-  FETCHED_METRICS = [['firstRender', 'First Paint', 'humanDuration'],
-                    ['first-contentful-paint', 'First Contentful Paint', 'humanDuration'],
-                    ['first-meaningful-paint', 'First Meaningful Paint', 'humanDuration'],
-                    ['consistently-interactive', 'Page Interactive', 'humanDuration'],
-                    ['visually_complete_85', '85% Visually Complete', 'humanDuration'],
-                    ['visually_complete', 'Visually Complete', 'humanDuration'],
-                    ['js-parse-compile', 'JS Parse & Compile', 'humanDuration'],
-                    ['page_wait_timing', 'Response time', 'humanDuration'],
-                    ['time-to-first-byte', 'Time to First Byte', 'humanDuration'],
-                    ['asset_count', 'Number of requests', 'trust'],
-                    ['lighthouse-performance-score', 'Lighthouse Performance Score', 'trust'],
-                    ['lighthouse-pwa-score', 'Lighthouse Progressive Web App Score', 'trust'],
-                    ['lighthouse-accessibility-score', 'Lighthouse Accessibility Score', 'trust'],
-                    ['lighthouse-best-practices-score', 'Lighthouse Best Practices Score', 'trust'],
-                    ['page_body_size_in_bytes', 'Total Page size in bytes', 'fileSize'],
-                    ['html_body_size_in_bytes', 'Total HTML size in bytes', 'fileSize'],
-                    ['js_body_size_in_bytes', 'Total JavaScript size in bytes', 'fileSize'],
-                    ['image_body_size_in_bytes', 'Total Image size in bytes', 'fileSize'],
-                    ['font_body_size_in_bytes', 'Total Webfont size in bytes', 'fileSize'],
-                    ['json_body_size_in_bytes', 'Total JSON size in bytes', 'fileSize'],
-                    ['css_body_size_in_bytes', 'Total CSS size in bytes', 'fileSize']]
+  FETCHED_METRICS = [
+    { name: 'firstRender', label: 'First Paint', formatter: 'humanDuration' },
+    { name: 'first-contentful-paint', label: 'First Contentful Paint', formatter: 'humanDuration' },
+    { name: 'first-meaningful-paint', label: 'First Meaningful Paint', formatter: 'humanDuration' },
+    { name: 'consistently-interactive', label: 'Page Interactive', formatter: 'humanDuration' },
+    { name: 'visually_complete_85', label: '85% Visually Complete', formatter: 'humanDuration' },
+    { name: 'visually_complete', label: 'Visually Complete', formatter: 'humanDuration' },
+    { name: 'js-parse-compile', label: 'JS Parse & Compile', formatter: 'humanDuration' },
+    { name: 'page_wait_timing', label: 'Response time', formatter: 'humanDuration' },
+    { name: 'time-to-first-byte', label: 'Time to First Byte', formatter: 'humanDuration' },
+    { name: 'asset_count', label: 'Number of requests', formatter: 'trust' },
+    { name: 'lighthouse-performance-score', label: 'Lighthouse Performance Score', formatter: 'trust' },
+    { name: 'lighthouse-pwa-score', label: 'Lighthouse Progressive Web App Score', formatter: 'trust' },
+    { name: 'lighthouse-accessibility-score', label: 'Lighthouse Accessibility Score', formatter: 'trust' },
+    { name: 'lighthouse-best-practices-score', label: 'Lighthouse Best Practices Score', formatter: 'trust' },
+    { name: 'page_body_size_in_bytes', label: 'Total Page size in bytes', formatter: 'fileSize' },
+    { name: 'html_body_size_in_bytes', label: 'Total HTML size in bytes', formatter: 'fileSize' },
+    { name: 'js_body_size_in_bytes', label: 'Total JavaScript size in bytes', formatter: 'fileSize' },
+    { name: 'image_body_size_in_bytes', label: 'Total Image size in bytes', formatter: 'fileSize' },
+    { name: 'font_body_size_in_bytes', label: 'Total Webfont size in bytes', formatter: 'fileSize' },
+    { name: 'json_body_size_in_bytes', label: 'Total JSON size in bytes', formatter: 'fileSize' },
+    { name: 'css_body_size_in_bytes', label: 'Total CSS size in bytes', formatter: 'fileSize' }
+  ]
 end

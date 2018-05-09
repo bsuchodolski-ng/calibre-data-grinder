@@ -10,12 +10,16 @@ class MetricsService
       raw_data = fetch_data_from_calibre
       data_hash = JSON.parse(raw_data, symbolize_names: true)
       data_hash[:page][:timeseries][:series].map do |serie|
-        [serie[:metric][:name], serie[:metric][:label], serie[:metric][:formatter]]
+        {
+          name: serie[:metric][:name],
+          label: serie[:metric][:label],
+          formatter: serie[:metric][:formatter]
+        }
       end
     end
   end
 
   def fetch_data_from_calibre
-    `#{command}`
+    `#{@command}`
   end
 end
