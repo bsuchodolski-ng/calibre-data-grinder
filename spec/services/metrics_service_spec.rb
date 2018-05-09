@@ -9,7 +9,7 @@ RSpec.describe MetricsService do
 
   before do
     allow_any_instance_of(MetricsService)
-      .to receive(:fetch_data_from_calibre)
+      .to receive(:raw_data_from_calibre)
       .and_return(pulse_metrics)
   end
 
