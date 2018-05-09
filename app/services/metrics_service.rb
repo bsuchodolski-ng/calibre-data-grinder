@@ -1,6 +1,8 @@
 require 'json'
 
-class MetricsService < CalibreService
+class MetricsService
+  include CalibreParsing
+
   def initialize(site = 'netguru-site', page = 'home')
     @command = "calibre site get-pulse-metrics --site=#{site} --page=#{page} --json"
   end

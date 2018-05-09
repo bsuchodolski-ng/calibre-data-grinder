@@ -1,6 +1,6 @@
 require 'json'
 
-class CalibreService
+module CalibreParsing
 
   def raw_data_from_calibre
     `#{@command}`
