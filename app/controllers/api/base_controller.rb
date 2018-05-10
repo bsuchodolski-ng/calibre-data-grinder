@@ -1,9 +1,7 @@
-module Api
-  class BaseController < ApplicationController
-    private
+class Api::BaseController < ApplicationController
+  private
 
-    def logged_in
-      head 401 unless logged_in?
-    end
+  def logged_in
+    head 401 unless logged_in?
   end
 end
