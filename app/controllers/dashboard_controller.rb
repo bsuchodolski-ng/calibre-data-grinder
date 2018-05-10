@@ -5,6 +5,8 @@ class DashboardController < ApplicationController
   def show
   end
 
+  private
+
   def logged_in
     redirect_to login_path unless logged_in?
   end
