@@ -6,4 +6,8 @@ Rails.application.routes.draw do
   get 'signout', to: 'sessions#destroy', as: 'signout'
   resources :sessions, only: [:create, :destroy]
   resource :dashboard, only: [:show]
+
+  namespace :api, defaults: { format: :json } do
+    resources :metrics, only: [:index]
+  end
 end
