@@ -23,6 +23,26 @@ $(document).ready(function() {
     $('.select2').select2({
       theme: "bootstrap"
     });
+
+    $('#metric_select').select2({
+      theme: "bootstrap",
+      ajax: {
+        url: '/api/metrics',
+        dataType: 'json',
+        processResults: function(data) {
+          return {
+            results: data.map(function(item) {
+              return {
+                text: item.label,
+                id: item.name
+              }
+            })
+          }
+        }
+      }
+    });
+
+
     $(".tablesorter").tablesorter({
       cssAsc: 'up',
       cssDesc: 'down',
