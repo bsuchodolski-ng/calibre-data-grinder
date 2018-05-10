@@ -1,7 +1,7 @@
 class SitesService
   include CalibreParsing
 
-  def initialize(site = 'netguru-site', page = 'home')
+  def initialize
     @command = "calibre site list --json"
   end
 
