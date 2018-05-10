@@ -2146,5 +2146,5 @@ module Calibre
     { name: 'font_body_size_in_bytes', label: 'Total Webfont size in bytes', formatter: 'fileSize' },
     { name: 'json_body_size_in_bytes', label: 'Total JSON size in bytes', formatter: 'fileSize' },
     { name: 'css_body_size_in_bytes', label: 'Total CSS size in bytes', formatter: 'fileSize' }
-  ]
+  ].freeze
 end
