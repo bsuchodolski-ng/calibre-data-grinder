@@ -17,38 +17,36 @@
   </div>
 
   <div class="content">
-    <div class="controls">
-      <div class="metric">
-        <label for="metric_select">
-          Metric:
-        </label>
-        <select id="metric_select"></select>
-      </div>
+      <%= form_tag('/', method: 'post', class: 'controls', remote: true) do %>
+        <div class="metric">
+          <%= label_tag(:metric_select, 'Metric:')%>
+          <%= select_tag(:metric_select) %>
+        </div>
 
-      <div class="filters">
-        <span>Filters:</span>
-        <div class="filter">
-          <label for="metric_select">
-            Page:
-          </label>
-          <select class="select2" id="metric_select"></select>
+        <div class="filters">
+          <span>Filters:</span>
+          <div class="filter">
+            <label for="metric_select">
+              Page:
+            </label>
+            <select class="select2" id="metric_select"></select>
+          </div>
+          <div class="filter">
+            <label for="metric_select">
+              Site:
+            </label>
+            <select class="select2" id="metric_select"></select>
+          </div>
+          <div class="filter">
+            <label for="metric_select">
+              Metric:
+            </label>
+            <select class="select2" id="metric_select"></select>
+          </div>
         </div>
-        <div class="filter">
-          <label for="metric_select">
-            Site:
-          </label>
-          <select class="select2" id="metric_select"></select>
-        </div>
-        <div class="filter">
-          <label for="metric_select">
-            Metric:
-          </label>
-          <select class="select2" id="metric_select"></select>
-        </div>
-      </div>
 
-      <button class="button">Generate</button>
-    </div>
+        <%= submit_tag('Generate', class: 'button') %>
+      <% end %>
 
     <div id="data-table">
       <div class="no_data">
