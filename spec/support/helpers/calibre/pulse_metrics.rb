@@ -2147,4 +2147,28 @@ module Calibre
     { name: 'json_body_size_in_bytes', label: 'Total JSON size in bytes', formatter: 'fileSize' },
     { name: 'css_body_size_in_bytes', label: 'Total CSS size in bytes', formatter: 'fileSize' }
   ].freeze
+
+  METRICS_VALUES = [
+    {:metric_name=>"firstRender", "Chrome Desktop"=>2003, "iPhone 6, 3G connection"=>5017},
+    {:metric_name=>"first-contentful-paint", "Chrome Desktop"=>2003, "iPhone 6, 3G connection"=>5373},
+    {:metric_name=>"first-meaningful-paint", "Chrome Desktop"=>3002, "iPhone 6, 3G connection"=>11157},
+    {:metric_name=>"consistently-interactive", "Chrome Desktop"=>21437, "iPhone 6, 3G connection"=>41045},
+    {:metric_name=>"visually_complete_85", "Chrome Desktop"=>21351, "iPhone 6, 3G connection"=>58866},
+    {:metric_name=>"visually_complete", "Chrome Desktop"=>21452, "iPhone 6, 3G connection"=>60002},
+    {:metric_name=>"js-parse-compile", "Chrome Desktop"=>7004, "iPhone 6, 3G connection"=>19525},
+    {:metric_name=>"page_wait_timing", "Chrome Desktop"=>800, "iPhone 6, 3G connection"=>902},
+    {:metric_name=>"time-to-first-byte", "Chrome Desktop"=>665, "iPhone 6, 3G connection"=>593},
+    {:metric_name=>"asset_count", "Chrome Desktop"=>176, "iPhone 6, 3G connection"=>158},
+    {:metric_name=>"lighthouse-performance-score", "Chrome Desktop"=>31, "iPhone 6, 3G connection"=>2},
+    {:metric_name=>"lighthouse-pwa-score", "Chrome Desktop"=>45, "iPhone 6, 3G connection"=>45},
+    {:metric_name=>"lighthouse-accessibility-score", "Chrome Desktop"=>72, "iPhone 6, 3G connection"=>72},
+    {:metric_name=>"lighthouse-best-practices-score", "Chrome Desktop"=>62, "iPhone 6, 3G connection"=>62},
+    {:metric_name=>"page_body_size_in_bytes", "Chrome Desktop"=>8587577, "iPhone 6, 3G connection"=>8407942},
+    {:metric_name=>"html_body_size_in_bytes", "Chrome Desktop"=>59817, "iPhone 6, 3G connection"=>60099},
+    {:metric_name=>"js_body_size_in_bytes", "Chrome Desktop"=>4964485, "iPhone 6, 3G connection"=>4964517},
+    {:metric_name=>"image_body_size_in_bytes", "Chrome Desktop"=>2336435, "iPhone 6, 3G connection"=>2158973},
+    {:metric_name=>"font_body_size_in_bytes", "Chrome Desktop"=>118654, "iPhone 6, 3G connection"=>118654},
+    {:metric_name=>"json_body_size_in_bytes", "Chrome Desktop"=>81936, "iPhone 6, 3G connection"=>79455},
+    {:metric_name=>"css_body_size_in_bytes", "Chrome Desktop"=>731138, "iPhone 6, 3G connection"=>731138}
+  ]
 end
