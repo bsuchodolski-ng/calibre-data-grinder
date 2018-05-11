@@ -23,7 +23,7 @@ $(document).ready(function() {
       theme: "bootstrap"
     });
 
-    $('#metric_select').select2({
+    $('#desired_metric').select2({
       theme: "bootstrap",
       ajax: {
         url: '/api/metrics',

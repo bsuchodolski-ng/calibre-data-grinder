@@ -17,10 +17,10 @@
   </div>
 
   <div class="content">
-      <%= form_tag('/', method: 'post', class: 'controls', remote: true) do %>
+      <%= form_tag({ controller: 'results', action: 'generate' }, method: 'post', class: 'controls', remote: true) do %>
         <div class="metric">
-          <%= label_tag(:metric_select, 'Metric:')%>
-          <%= select_tag(:metric_select) %>
+          <%= label_tag(:desired_metric, 'Metric:')%>
+          <%= select_tag(:desired_metric) %>
         </div>
 
         <div class="filters">
