@@ -16,6 +16,7 @@ gem 'redis-rails'
 gem 'jquery-rails'
 gem 'select2-rails'
 gem 'jquery-tablesorter'
+gem 'responders'
 
 group :development, :test do
   gem 'byebug', platforms: [:mri, :mingw, :x64_mingw]
