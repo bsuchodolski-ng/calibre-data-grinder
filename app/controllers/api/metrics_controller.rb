@@ -1,4 +1,4 @@
-class Api::MetricsController < Api::BaseController
+class Api::MetricsController < ApplicationController
   before_action :logged_in
 
   def index
