@@ -12,13 +12,9 @@ class PagesService
       @data_hash.map do |page|
         {
           name: page[:name],
-          slug: make_slug(page[:name])
+          uuid: page[:uuid]
         }
       end
     end
-  end
-
-  def make_slug(name)
-    name.parameterize
   end
 end

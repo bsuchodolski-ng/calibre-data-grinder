@@ -23,8 +23,8 @@ module Calibre
   HEREDOC
 
   PAGES = [
-    { name: 'First Name', slug: 'first-name' },
-    { name: 'Second (Name)', slug: 'second-name' },
-    { name: 'ThirdName', slug: 'thirdname' }
+    { name: 'First Name', uuid: 'uuid1' },
+    { name: 'Second (Name)', uuid: 'uuid2' },
+    { name: 'ThirdName', uuid: 'uuid3' }
   ].freeze
 end
