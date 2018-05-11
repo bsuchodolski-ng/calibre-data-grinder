@@ -9,4 +9,8 @@ class ApplicationController < ActionController::Base
   def logged_in?
     session[:user_id].present?
   end
+
+  def logged_in
+    head 401 unless logged_in?
+  end
 end
