@@ -38,10 +38,13 @@
             <select class="select2" id="metric_select"></select>
           </div>
           <div class="filter">
-            <label for="metric_select">
+            <label for="metric_from">
               Metric:
             </label>
-            <select class="select2" id="metric_select"></select>
+            <div class="from_to">
+              <%= number_field_tag :metric_from, nil, min: 1, :step => 'any', placeholder: 'From' %>
+              <%= number_field_tag :metric_to, nil, min: 1, :step => 'any', placeholder: 'To' %>
+            </div>
           </div>
         </div>
 

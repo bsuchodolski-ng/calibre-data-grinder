@@ -80,6 +80,15 @@ select {
   width: 100%;
 }
 
+.from_to {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+
+.from_to > input {
+  min-height: 32px;
+}
+
 .controls .button {
   align-self: start;
 }
