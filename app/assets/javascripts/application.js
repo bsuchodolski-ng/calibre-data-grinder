@@ -15,7 +15,6 @@
 //= require activestorage
 //= require turbolinks
 //= require select2
-//= require jquery-tablesorter
 //= require_tree .
 
 $(document).ready(function() {
@@ -39,12 +38,5 @@ $(document).ready(function() {
           }
         }
       }
-    });
-
-
-    $(".tablesorter").tablesorter({
-      cssAsc: 'up',
-      cssDesc: 'down',
-      cssNone: 'none'
     });
 });

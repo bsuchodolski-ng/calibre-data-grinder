@@ -15,7 +15,6 @@ gem 'omniauth-google-oauth2'
 gem 'redis-rails'
 gem 'jquery-rails'
 gem 'select2-rails'
-gem 'jquery-tablesorter'
 gem 'responders'
 
 group :development, :test do
