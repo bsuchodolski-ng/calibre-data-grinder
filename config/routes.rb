@@ -10,5 +10,6 @@ Rails.application.routes.draw do
 
   namespace :api, defaults: { format: :json } do
     resources :metrics, only: [:index]
+    resources :sites, only: [:index]
   end
 end
