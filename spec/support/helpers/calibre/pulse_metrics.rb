@@ -2201,4 +2201,16 @@ module Calibre
     {:site=>"Example page", :page=>"ThirdName", :profile=>"Chrome Desktop", :value=>2003},
     {:site=>"Example page", :page=>"ThirdName", :profile=>"iPhone 6, 3G connection", :value=>5017}
   ]
+
+  FILTERED_FROM = [
+    {:site=>"Example page", :page=>"First Name", :profile=>"iPhone 6, 3G connection", :value=>5017},
+    {:site=>"Example page", :page=>"Second (Name)", :profile=>"iPhone 6, 3G connection", :value=>5017},
+    {:site=>"Example page", :page=>"ThirdName", :profile=>"iPhone 6, 3G connection", :value=>5017}
+  ]
+
+  FILTERED_TO = [
+    {:site=>"Example page", :page=>"First Name", :profile=>"Chrome Desktop", :value=>2003},
+    {:site=>"Example page", :page=>"Second (Name)", :profile=>"Chrome Desktop", :value=>2003},
+    {:site=>"Example page", :page=>"ThirdName", :profile=>"Chrome Desktop", :value=>2003},
+  ]
 end

@@ -11,6 +11,8 @@ RSpec.describe ResultsController, type: :controller do
   let(:measurements)    { Calibre::METRICS_VALUES }
   let(:results)         { Calibre::RESULTS }
   let(:results_by_site) { Calibre::FILTERED_BY_SITE }
+  let(:results_from)    { Calibre::FILTERED_FROM }
+  let(:results_to)      { Calibre::FILTERED_TO }
   let(:desired_metric)  { Calibre::FETCHED_METRICS.first }
 
   before do
@@ -48,6 +50,22 @@ RSpec.describe ResultsController, type: :controller do
 
         it 'returns results only for desired site' do
           expect(assigns[:results]).to eq results_by_site
+        end
+      end
+
+      context 'when user filter with from value' do
+        before { post :generate, params: { desired_metric: 'firstRender', desired_sites: ['example-page'], metric_from: 2005 }, xhr: true }
+
+        it 'returns results only for desired site' do
+          expect(assigns[:results]).to eq results_from
+        end
+      end
+
+      context 'when user filter with to value' do
+        before { post :generate, params: { desired_metric: 'firstRender', desired_sites: ['example-page'], metric_to: 2005 }, xhr: true }
+
+        it 'returns results only for desired site' do
+          expect(assigns[:results]).to eq results_to
         end
       end
     end

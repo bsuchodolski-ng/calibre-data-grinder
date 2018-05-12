@@ -15,6 +15,7 @@ class ResultsController < ApplicationController
         desired_metric = filter_desired_metric(metrics)
         next if desired_metric.nil?
         desired_metric.keys.reject { |key| key == :name }.each do |profile|
+          next unless value_in_range?(desired_metric[profile])
           @results << {
             site: site[:name],
             page: page[:name],
@@ -44,5 +45,11 @@ class ResultsController < ApplicationController
     desired_sites = params[:desired_sites]
     return sites unless desired_sites.present?
     sites.select { |site| desired_sites.include? site[:slug] }
+  end
+
+  def value_in_range?(value)
+    params[:metric_from].present? ? from = params[:metric_from].to_i : from = 0
+    params[:metric_to].present? ? to = params[:metric_to].to_i : to = Float::INFINITY
+    (from <= value) && (value <= to)
   end
 end
