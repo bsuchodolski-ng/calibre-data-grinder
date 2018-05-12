@@ -43,6 +43,6 @@ class ResultsController < ApplicationController
   def filter_sites(sites)
     desired_sites = params[:desired_sites]
     return sites unless desired_sites.present?
-    sites.select { |site| desired_sites.include? site[:slug]  }
+    sites.select { |site| desired_sites.include? site[:slug] }
   end
 end
