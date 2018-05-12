@@ -39,4 +39,22 @@ $(document).ready(function() {
         }
       }
     });
+
+    $('#desired_sites').select2({
+      theme: "bootstrap",
+      ajax: {
+        url: '/api/sites',
+        dataType: 'json',
+        processResults: function(data) {
+          return {
+            results: data.map(function(item) {
+              return {
+                text: item.name,
+                id: item.slug
+              }
+            })
+          }
+        }
+      }
+    });
 });

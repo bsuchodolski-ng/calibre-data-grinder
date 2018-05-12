@@ -28,14 +28,12 @@
         <div class="filters">
           <span>Filters:</span>
           <div class="filter">
-            <label for="metric_select">
-              Page:
-            </label>
-            <select class="select2" id="metric_select"></select>
+            <%= label_tag(:desired_sites, 'Sites:')%>
+            <%= select_tag(:desired_sites) %>
           </div>
           <div class="filter">
             <label for="metric_select">
-              Site:
+              Page:
             </label>
             <select class="select2" id="metric_select"></select>
           </div>
