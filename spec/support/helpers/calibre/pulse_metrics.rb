@@ -2171,4 +2171,25 @@ module Calibre
     {:name=>"json_body_size_in_bytes", "Chrome Desktop"=>81936, "iPhone 6, 3G connection"=>79455},
     {:name=>"css_body_size_in_bytes", "Chrome Desktop"=>731138, "iPhone 6, 3G connection"=>731138}
   ]
+
+  RESULTS = [
+    {:site=>"Example page", :page=>"First Name", :profile=>"Chrome Desktop", :value=>2003},
+    {:site=>"Example page", :page=>"First Name", :profile=>"iPhone 6, 3G connection", :value=>5017},
+    {:site=>"Example page", :page=>"Second (Name)", :profile=>"Chrome Desktop", :value=>2003},
+    {:site=>"Example page", :page=>"Second (Name)", :profile=>"iPhone 6, 3G connection", :value=>5017},
+    {:site=>"Example page", :page=>"ThirdName", :profile=>"Chrome Desktop", :value=>2003},
+    {:site=>"Example page", :page=>"ThirdName", :profile=>"iPhone 6, 3G connection", :value=>5017},
+    {:site=>"Weird (Slug)", :page=>"First Name", :profile=>"Chrome Desktop", :value=>2003},
+    {:site=>"Weird (Slug)", :page=>"First Name", :profile=>"iPhone 6, 3G connection", :value=>5017},
+    {:site=>"Weird (Slug)", :page=>"Second (Name)", :profile=>"Chrome Desktop", :value=>2003},
+    {:site=>"Weird (Slug)", :page=>"Second (Name)", :profile=>"iPhone 6, 3G connection", :value=>5017},
+    {:site=>"Weird (Slug)", :page=>"ThirdName", :profile=>"Chrome Desktop", :value=>2003},
+    {:site=>"Weird (Slug)", :page=>"ThirdName", :profile=>"iPhone 6, 3G connection", :value=>5017},
+    {:site=>"DoesNotExist", :page=>"First Name", :profile=>"Chrome Desktop", :value=>2003},
+    {:site=>"DoesNotExist", :page=>"First Name", :profile=>"iPhone 6, 3G connection", :value=>5017},
+    {:site=>"DoesNotExist", :page=>"Second (Name)", :profile=>"Chrome Desktop", :value=>2003},
+    {:site=>"DoesNotExist", :page=>"Second (Name)", :profile=>"iPhone 6, 3G connection", :value=>5017},
+    {:site=>"DoesNotExist", :page=>"ThirdName", :profile=>"Chrome Desktop", :value=>2003},
+    {:site=>"DoesNotExist", :page=>"ThirdName", :profile=>"iPhone 6, 3G connection", :value=>5017}
+  ]
 end

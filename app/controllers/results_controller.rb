@@ -12,6 +12,7 @@ class ResultsController < ApplicationController
         puts page
         metrics = PulseMetricsService.new(site[:slug], page[:uuid]).call
         desired_metric = filter_desired_metric(metrics)
+        next if desired_metric.nil?
         desired_metric.keys.reject { |key| key == :name }.each do |profile|
           @results << {
             site: site[:name],
@@ -19,11 +20,13 @@ class ResultsController < ApplicationController
             profile: profile,
             value: desired_metric[profile]
           }
-        end if desired_metric
+        end
       end
     end
     respond_with(@results)
   end
+
+  private
 
   def filter_desired_metric(metrics)
     @desired_metric = params[:desired_metric]
