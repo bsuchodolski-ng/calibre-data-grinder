@@ -5,12 +5,13 @@ require 'support/helpers/calibre/pages'
 require 'support/helpers/calibre/pulse_metrics'
 
 RSpec.describe ResultsController, type: :controller do
-  let(:user)           { create(:user) }
-  let(:sites)          { Calibre::SITES }
-  let(:pages)          { Calibre::PAGES }
-  let(:measurements)   { Calibre::METRICS_VALUES }
-  let(:results)        { Calibre::RESULTS }
-  let(:desired_metric) { Calibre::FETCHED_METRICS.first }
+  let(:user)            { create(:user) }
+  let(:sites)           { Calibre::SITES }
+  let(:pages)           { Calibre::PAGES }
+  let(:measurements)    { Calibre::METRICS_VALUES }
+  let(:results)         { Calibre::RESULTS }
+  let(:results_by_site) { Calibre::FILTERED_BY_SITE }
+  let(:desired_metric)  { Calibre::FETCHED_METRICS.first }
 
   before do
     allow_any_instance_of(SitesService)
@@ -30,14 +31,24 @@ RSpec.describe ResultsController, type: :controller do
         log_in(user)
       end
 
-      before { post :generate, params: { desired_metric: 'firstRender' }, xhr: true }
+      context 'when user does not filter by site' do
+        before { post :generate, params: { desired_metric: 'firstRender' }, xhr: true }
 
-      it 'passes desired_metric to the view' do
-        expect(assigns[:desired_metric]).to eq desired_metric
+        it 'passes desired_metric to the view' do
+          expect(assigns[:desired_metric]).to eq desired_metric
+        end
+
+        it 'passes results for all pages to the view' do
+          expect(assigns[:results]).to eq results
+        end
       end
 
-      it 'passes results for all pages to the view' do
-        expect(assigns[:results]).to eq results
+      context 'when user filter by site' do
+        before { post :generate, params: { desired_metric: 'firstRender', desired_sites: ['example-page'] }, xhr: true }
+
+        it 'returns results only for desired site' do
+          expect(assigns[:results]).to eq results_by_site
+        end
       end
     end
   end

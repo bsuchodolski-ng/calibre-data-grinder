@@ -29,7 +29,7 @@
           <span>Filters:</span>
           <div class="filter">
             <%= label_tag(:desired_sites, 'Sites:')%>
-            <%= select_tag(:desired_sites) %>
+            <%= select_tag(:desired_sites, nil,  multiple: true) %>
           </div>
           <div class="filter">
             <label for="metric_select">

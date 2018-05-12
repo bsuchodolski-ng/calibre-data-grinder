@@ -5,6 +5,7 @@ class ResultsController < ApplicationController
   def generate
     @results = []
     sites = SitesService.new.call
+    sites = filter_sites(sites)
     sites.each do |site|
       puts site
       pages = PagesService.new(site[:slug]).call
@@ -37,5 +38,11 @@ class ResultsController < ApplicationController
   def desired_metric_object
     metrics = MetricsService.new.call
     metrics.select { |metric| metric[:name] == @desired_metric }.first
+  end
+
+  def filter_sites(sites)
+    desired_sites = params[:desired_sites]
+    return sites unless desired_sites.present?
+    sites.select { |site| desired_sites.include? site[:slug]  }
   end
 end
