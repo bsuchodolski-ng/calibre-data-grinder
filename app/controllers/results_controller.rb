@@ -23,6 +23,7 @@ class ResultsController < ApplicationController
         end
       end
     end
+    @desired_metric = desired_metric_object
     respond_with(@results)
   end
 
@@ -30,6 +31,11 @@ class ResultsController < ApplicationController
 
   def filter_desired_metric(metrics)
     @desired_metric = params[:desired_metric]
+    metrics.select { |metric| metric[:name] == @desired_metric }.first
+  end
+
+  def desired_metric_object
+    metrics = MetricsService.new.call
     metrics.select { |metric| metric[:name] == @desired_metric }.first
   end
 end
