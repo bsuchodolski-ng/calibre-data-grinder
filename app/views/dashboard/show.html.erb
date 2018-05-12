@@ -1,7 +1,7 @@
 <% content_for :additional_stylesheets do %>
   <%= stylesheet_link_tag 'https://cdnjs.cloudflare.com/ajax/libs/select2-bootstrap-theme/0.1.0-beta.10/select2-bootstrap.css' %>
   <%= stylesheet_link_tag 'https://cdn.datatables.net/1.10.16/css/jquery.dataTables.min.css' %>
-  <%= javascript_include_tag 'https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js' %>
+  <%= javascript_include_tag 'https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js', defer: true %>
 <% end %>
 
 <div class="container dashboard">
@@ -22,7 +22,7 @@
       <%= form_tag({ controller: 'results', action: 'generate' }, method: 'post', class: 'controls', remote: true) do %>
         <div class="metric">
           <%= label_tag(:desired_metric, 'Metric:')%>
-          <%= select_tag(:desired_metric) %>
+          <%= select_tag(:desired_metric, required: true) %>
         </div>
 
         <div class="filters">

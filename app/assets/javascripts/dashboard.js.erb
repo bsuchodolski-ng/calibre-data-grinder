@@ -1,0 +1,7 @@
+generate_form = document.querySelector("form.controls")
+data_table_div = document.querySelector(".no_data")
+spinner = "<div><img src=<%= asset_path 'spinner.svg' %>></div>"
+
+$('form.controls').on('ajax:send', function(event) {
+  data_table_div.innerHTML = spinner
+});

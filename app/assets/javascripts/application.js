@@ -17,44 +17,42 @@
 //= require select2
 //= require_tree .
 
-$(document).ready(function() {
-    $('.select2').select2({
-      theme: "bootstrap"
-    });
+$('.select2').select2({
+  theme: "bootstrap"
+});
 
-    $('#desired_metric').select2({
-      theme: "bootstrap",
-      ajax: {
-        url: '/api/metrics',
-        dataType: 'json',
-        processResults: function(data) {
+$('#desired_metric').select2({
+  theme: "bootstrap",
+  ajax: {
+    url: '/api/metrics',
+    dataType: 'json',
+    processResults: function(data) {
+      return {
+        results: data.map(function(item) {
           return {
-            results: data.map(function(item) {
-              return {
-                text: item.label,
-                id: item.name
-              }
-            })
+            text: item.label,
+            id: item.name
           }
-        }
+        })
       }
-    });
+    }
+  }
+});
 
-    $('#desired_sites').select2({
-      theme: "bootstrap",
-      ajax: {
-        url: '/api/sites',
-        dataType: 'json',
-        processResults: function(data) {
+$('#desired_sites').select2({
+  theme: "bootstrap",
+  ajax: {
+    url: '/api/sites',
+    dataType: 'json',
+    processResults: function(data) {
+      return {
+        results: data.map(function(item) {
           return {
-            results: data.map(function(item) {
-              return {
-                text: item.name,
-                id: item.slug
-              }
-            })
+            text: item.name,
+            id: item.slug
           }
-        }
+        })
       }
-    });
+    }
+  }
 });
