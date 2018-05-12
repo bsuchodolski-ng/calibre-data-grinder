@@ -1,2 +1,9 @@
-results = <%= raw @results.to_json %>
-console.log(<%= raw @results.to_json %>)
+data_table = "<%= j(render partial: 'data_table', locals: { results: @results, desired_metric: @desired_metric }) %>"
+
+data_table_div = document.querySelector("#data-table")
+data_table_div.innerHTML = data_table
+
+$('#data-table > table').DataTable( {
+  "lengthChange": false,
+  
+});

@@ -1,0 +1,23 @@
+<table>
+
+  <thead>
+    <tr>
+      <th>Site</td>
+      <th>Page</td>
+      <th>Profile</td>
+      <th><%= "#{desired_metric[:label]} (#{format(desired_metric)}) " %></td>
+    </tr>
+  <thead>
+
+  <tbody>
+    <% @results.each do |result| %>
+      <tr>
+        <td><%= result[:site] %></td>
+        <td><%= result[:page] %></td>
+        <td><%= result[:profile] %></td>
+        <td><%= result[:value] %></td>
+      </tr>
+    <% end %>
+  </tbody>
+
+</table>
