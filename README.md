@@ -19,6 +19,7 @@ Calibre Data Grinder
 * Configuring and using Redis as Rails cache;
 * Using services to extract complex logic from controllers;
 * How to change default SQLite db to something else (PostgreSQL in this case);
+* Pluging in some JQuery components (select2, DataTables);
 
 ## What have I practiced with this project
 
