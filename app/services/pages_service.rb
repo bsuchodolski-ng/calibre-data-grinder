@@ -7,7 +7,7 @@ class PagesService
   end
 
   def call
-    Rails.cache.fetch("calibre:#{@site}:pages", expires_in: 1.minute) do
+    Rails.cache.fetch("calibre:#{@site}:pages", expires_in: 24.hours) do
       parse_data(raw_data_from_calibre)
       @data_hash.map do |page|
         {
