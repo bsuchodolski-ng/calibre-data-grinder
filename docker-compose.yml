@@ -1,0 +1,23 @@
+version: '2'
+services:
+  web:
+    build: .
+    ports:
+      - "8080:3000"
+    env_file: config/local_env.yml
+    volumes:
+      - .:/app
+    depends_on:
+      - db
+      - redis
+    command: bundle exec rails s -b 0.0.0.0
+  db:
+    image: postgres:latest
+    volumes:
+      - ./tmp/db:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+  redis:
+    image: redis:alpine
+    ports:
+      - "6379:6379"

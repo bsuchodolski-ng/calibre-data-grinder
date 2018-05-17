@@ -8,9 +8,10 @@
 development:
   adapter: postgresql
   encoding: unicode
+  host: db
   database: calibre_data_grinder
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: calibre_data_grinder
+  username: postgres
   timeout: 5000
 
 # Warning: The database defined as "test" will be erased and
@@ -19,15 +20,17 @@ development:
 test:
   adapter: postgresql
   encoding: unicode
+  host: db
   database: calibre_data_grinder_test
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: calibre_data_grinder
+  username: postgres
   timeout: 5000
 
 production:
   adapter: postgresql
   encoding: unicode
+  host: db
   database: calibre_data_grinder_production
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  username: calibre_data_grinder
+  username: postgres
   timeout: 5000
