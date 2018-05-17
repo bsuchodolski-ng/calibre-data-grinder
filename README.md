@@ -9,7 +9,8 @@ Calibre Data Grinder
 
 * ruby 2.5.1
 * postgres
-* npm install calibre -g and set it up
+* redis
+* calibre-cli 1.0.9
 
 ## What have I learned with this project
 
@@ -20,8 +21,9 @@ Calibre Data Grinder
 * Using services to extract complex logic from controllers;
 * How to change default SQLite db to something else (PostgreSQL in this case);
 * Pluging in some JQuery components (select2, DataTables);
+* Basic docker - creating images, running containers, using volumes, using docker-compose to run multi-containers app
+* Writing own buildpacks for heroku deployment
 
 ## What have I practiced with this project
 
-* Rails usage - routes and controllers, tweaking views with different layouts;
-* Further knowledge of what assets pipeline actually is and how it works;
+* Rails usage - routes and controllers, tweaking views with different layouts, further understanding of asset pipeline
