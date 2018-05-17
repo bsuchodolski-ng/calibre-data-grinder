@@ -8,6 +8,7 @@ class PulseMetricsService
   end
 
   def call
+    Rails.logger.info "Processing calibre site:'#{@site}' page:'#{@page_uuid}'"
     Rails.cache.fetch("calibre:#{@site}:#{@page_uuid}:pulse-metrics", expires_in: 24.hours) do
       parse_data(raw_data_from_calibre)
       @data_hash[:page][:timeseries][:series].map do |serie|

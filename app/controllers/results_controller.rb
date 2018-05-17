@@ -7,10 +7,8 @@ class ResultsController < ApplicationController
     sites = SitesService.new.call
     sites = filter_sites(sites)
     sites.each do |site|
-      puts site
       pages = PagesService.new(site[:slug]).call
       pages.each do |page|
-        puts page
         metrics = PulseMetricsService.new(site[:slug], page[:uuid]).call
         desired_metric = filter_desired_metric(metrics)
         next if desired_metric.nil?
