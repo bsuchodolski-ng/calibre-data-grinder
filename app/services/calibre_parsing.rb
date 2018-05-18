@@ -1,9 +1,10 @@
+require 'open3'
 require 'json'
 
 module CalibreParsing
-
   def raw_data_from_calibre
-    `#{@command}`
+    output, _status = Open3.capture2(*@command)
+    output
   end
 
   def parse_data(raw_data)

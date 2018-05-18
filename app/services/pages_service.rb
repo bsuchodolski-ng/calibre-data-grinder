@@ -3,7 +3,7 @@ class PagesService
 
   def initialize(site)
     @site = site
-    @command = "calibre site pages --site=#{site} --json"
+    @command = %W[calibre site pages --site=#{site} --json]
   end
 
   def call

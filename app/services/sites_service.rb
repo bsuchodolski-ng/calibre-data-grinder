@@ -2,7 +2,7 @@ class SitesService
   include CalibreParsing
 
   def initialize
-    @command = "calibre site list --json"
+    @command = %w[calibre site list --json]
   end
 
   def call

@@ -4,7 +4,7 @@ class PulseMetricsService
   def initialize(site, page_uuid)
     @site = site
     @page_uuid = page_uuid
-    @command = "calibre site get-pulse-metrics --site=#{site} --page=#{page_uuid} --json"
+    @command = %W[calibre site get-pulse-metrics --site=#{site} --page=#{page_uuid} --json]
   end
 
   def call

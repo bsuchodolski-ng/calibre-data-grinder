@@ -2,7 +2,7 @@ class MetricsService
   include CalibreParsing
 
   def initialize(site = ENV['FIRST_SITE_NAME'], page_uuid = ENV['FIRST_PAGE_UUID'])
-    @command = "calibre site get-pulse-metrics --site=#{site} --page=#{page_uuid} --json"
+    @command = %W[calibre site get-pulse-metrics --site=#{site} --page=#{page_uuid} --json]
   end
 
   def call
