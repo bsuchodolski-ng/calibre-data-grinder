@@ -1,7 +1,7 @@
 class MetricsService
   include CalibreParsing
 
-  def initialize(site = 'netguru-site', page_uuid = 'a6580c3a-bc1e-4fc4-bd69-f4ea928588d8')
+  def initialize(site = ENV['FIRST_SITE_NAME'], page_uuid = ENV['FIRST_PAGE_UUID'])
     @command = "calibre site get-pulse-metrics --site=#{site} --page=#{page_uuid} --json"
   end
 
