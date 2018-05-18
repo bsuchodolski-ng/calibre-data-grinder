@@ -22,7 +22,7 @@
       <%= form_tag({ controller: 'results', action: 'generate' }, method: 'post', class: 'controls', remote: true) do %>
         <div class="metric">
           <%= label_tag(:desired_metric, 'Metric:')%>
-          <%= select_tag(:desired_metric, required: true) %>
+          <%= select_tag(:desired_metric, nil, required: true) %>
         </div>
 
         <div class="filters">
