@@ -6,7 +6,7 @@ class MetricsService
   end
 
   def call
-    Rails.cache.fetch('calibre:metrics', expires_in: 1.minute) do
+    Rails.cache.fetch('calibre:metrics', expires_in: 24.hours) do
       parse_data(raw_data_from_calibre)
       @data_hash[:page][:timeseries][:series].map do |serie|
         {
