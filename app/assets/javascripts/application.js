@@ -17,11 +17,8 @@
 //= require select2
 //= require_tree .
 
-$('.select2').select2({
-  theme: "bootstrap"
-});
-
 $('#desired_metric').select2({
+  width: '100%',
   theme: "bootstrap",
   ajax: {
     url: '/api/metrics',
@@ -40,6 +37,7 @@ $('#desired_metric').select2({
 });
 
 $('#desired_sites').select2({
+  width: '100%',
   theme: "bootstrap",
   ajax: {
     url: '/api/sites',
